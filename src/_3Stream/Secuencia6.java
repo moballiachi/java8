@@ -10,10 +10,19 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Secuencia6 {
 
 	public static void main(String[] args) {
+		
+		 Stream<String> stream = Stream.of("black bear", "brown bear", "grizzly");  
+		 long count = stream //.filter(s -> s.startsWith("g"))     
+				 .peek(System.out::println)
+				 
+				 .count();    // grizzly  
+		 System.out.println(count);    // 1
+		 
 		List<Integer> numbers = Arrays.asList(1, 8, 2, 2, 6, 3, 4, 5, 6, 7, 8); 
 		List<Integer> twoEvenSquares = 
 		numbers.stream().distinct().sorted().skip(3)    
